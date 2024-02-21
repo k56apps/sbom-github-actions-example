@@ -19,7 +19,7 @@ jobs:
           extensions: mbstring
 
       - name: Install CycloneDX PHP Composer plugin
-        composer require cyclonedx/cyclonedx-php-composer
+        run: composer require cyclonedx/cyclonedx-php-composer
 
       - name: Generate SBOM
         run: composer generate-sbom
