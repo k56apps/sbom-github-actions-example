@@ -1,0 +1,61 @@
+# For details of what checks are run for PRs please refer below
+# docs: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+name: Generate SBOM files
+
+on:
+  push:
+    branches: ["main", "develop"]
+    paths:
+      - '.github/workflows/generate-sbom.yml'
+      - 'tools/**'
+      - 'composer.*'
+  pull_request:
+    paths:
+      - '.github/workflows/generate-sbom.yml'
+      - 'tools/**'
+      - 'composer.*'
+  workflow_dispatch:
+  schedule:
+    # schedule weekly tests, since dependencies are not intended to be pinned
+    # this means: at 23:42 on Fridays
+    - cron: '42 23 * * 5'
+
+env:
+  PHP_VERSION_LATEST: "8.1"
+  PHP_PROJECT_EXT: dom,json,libxml,mbstring
+
+jobs:
+  generate-sbom:
+    name: Generate SBOM files
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        # see https://github.com/actions/checkout
+        uses: actions/checkout@v4
+      - name: Setup PHP
+        # see https://github.com/shivammathur/setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION_LATEST }}
+          extensions: ${{ env.PHP_PROJECT_EXT }}
+          tools: 'composer:v2'
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+        shell: bash
+      - name: Cache dependencies
+        if: ${{ steps.composer-cache.outputs.dir }}
+        # see https://github.com/actions/cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ github.job }}-${{ runner.os }}-php${{ matrix.php }}-${{ hashFiles('composer.*', 'tools/*/composer.*') }}
+          restore-keys: |
+            composer-${{ github.job }}-${{ runner.os }}-php${{ env.PHP_VERSION_LATEST }}-
+            composer-${{ github.job }}-${{ runner.os }}-
+      - name: Dev-Setup
+        run: >
+          composer run-script --
+          create-sbom-results:JSON
+          --no-interaction
