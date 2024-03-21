@@ -5,8 +5,7 @@ updates:
   - package-ecosystem: 'composer'
     directory: '/'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -20,8 +19,7 @@ updates:
   - directory: '/tools/composer-normalize'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -34,8 +32,7 @@ updates:
   - directory: '/tools/composer-require-checker'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -48,8 +45,7 @@ updates:
   - directory: '/tools/composer-unused'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -62,8 +58,7 @@ updates:
   - directory: '/tools/php-cs-fixer'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -76,8 +71,7 @@ updates:
   - directory: '/tools/phpunit'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -90,8 +84,7 @@ updates:
   - directory: '/tools/psalm'
     package-ecosystem: 'composer'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     allow:
       - dependency-type: 'all'
     versioning-strategy: 'auto'
@@ -105,8 +98,7 @@ updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
-      interval: 'weekly'
-      day: 'saturday'
+      interval: 'monthly'
     labels: [ 'dependencies', 'CI' ]
     commit-message:
       ## prefix maximum string length of 15

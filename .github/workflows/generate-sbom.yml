@@ -3,22 +3,8 @@
 name: Generate SBOM files
 
 on:
-  push:
-    branches: ["main", "develop"]
-    paths:
-      - '.github/workflows/generate-sbom.yml'
-      - 'tools/**'
-      - 'composer.*'
-  pull_request:
-    paths:
-      - '.github/workflows/generate-sbom.yml'
-      - 'tools/**'
-      - 'composer.*'
-  workflow_dispatch:
   schedule:
-    # schedule weekly tests, since dependencies are not intended to be pinned
-    # this means: at 23:42 on Fridays
-    - cron: '42 23 * * 5'
+    - cron: '15 0 1,15 * *'
 
 env:
   PHP_VERSION_LATEST: "8.1"
