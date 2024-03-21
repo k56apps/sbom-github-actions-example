@@ -54,7 +54,9 @@ jobs:
           restore-keys: |
             composer-${{ github.job }}-${{ runner.os }}-php${{ env.PHP_VERSION_LATEST }}-
             composer-${{ github.job }}-${{ runner.os }}-
-      - name: Dev-Setup
+      - name: Install CycloneDX PHP Composer plugin
+        run: composer require cyclonedx/cyclonedx-php-composer
+      - name: Generate SBOM files
         run: >
           composer run-script --
           create-sbom-results:JSON
