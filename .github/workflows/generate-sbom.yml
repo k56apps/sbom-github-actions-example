@@ -61,3 +61,8 @@ jobs:
           composer run-script --
           create-sbom-results:JSON
           --no-interaction
+      - name: Upload SBOM files
+        uses: actions/upload-artifact@v4
+        with:
+          name: SBOM files
+          path: results
