@@ -3,6 +3,8 @@
 name: Generate SBOM files
 
 on:
+  push:
+    branches: 'main'
   schedule:
     - cron: '15 0 1,15 * *'
 
