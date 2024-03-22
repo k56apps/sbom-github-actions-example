@@ -41,7 +41,7 @@ jobs:
             composer-${{ github.job }}-${{ runner.os }}-php${{ env.PHP_VERSION_LATEST }}-
             composer-${{ github.job }}-${{ runner.os }}-
       - name: Install CycloneDX PHP Composer plugin
-        run: composer require cyclonedx/cyclonedx-php-composer
+        run: composer install --no-interaction --optimize-autoloader
       - name: Generate SBOM files
         run: >
           composer run-script --
