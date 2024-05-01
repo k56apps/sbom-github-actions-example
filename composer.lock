@@ -5767,16 +5767,16 @@
         },
         {
             "name": "cyclonedx/cyclonedx-library",
-            "version": "v3.1.1",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CycloneDX/cyclonedx-php-library.git",
-                "reference": "d30f707d97bed6fae4b9d3a480aae70fa92c326a"
+                "reference": "34fb57c387abe57d3926e05511475ed4a04c1ed7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/d30f707d97bed6fae4b9d3a480aae70fa92c326a",
-                "reference": "d30f707d97bed6fae4b9d3a480aae70fa92c326a",
+                "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-library/zipball/34fb57c387abe57d3926e05511475ed4a04c1ed7",
+                "reference": "34fb57c387abe57d3926e05511475ed4a04c1ed7",
                 "shasum": ""
             },
             "require": {
@@ -5841,6 +5841,7 @@
                 "vex"
             ],
             "support": {
+                "docs": "https://cyclonedx-php-library.readthedocs.io",
                 "issues": "https://github.com/CycloneDX/cyclonedx-php-library/issues",
                 "source": "https://github.com/CycloneDX/cyclonedx-php-library/"
             },
@@ -5850,32 +5851,31 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-02-05T11:43:17+00:00"
+            "time": "2024-04-26T14:30:47+00:00"
         },
         {
             "name": "cyclonedx/cyclonedx-php-composer",
-            "version": "v5.0.1",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CycloneDX/cyclonedx-php-composer.git",
-                "reference": "b5ff6da5c81452537244e42791b831bf40a0bab8"
+                "reference": "f3a3cdc1a9e34bf1d5748e4279a24569cbf31fed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/b5ff6da5c81452537244e42791b831bf40a0bab8",
-                "reference": "b5ff6da5c81452537244e42791b831bf40a0bab8",
+                "url": "https://api.github.com/repos/CycloneDX/cyclonedx-php-composer/zipball/f3a3cdc1a9e34bf1d5748e4279a24569cbf31fed",
+                "reference": "f3a3cdc1a9e34bf1d5748e4279a24569cbf31fed",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2.3",
-                "cyclonedx/cyclonedx-library": "^3.1",
+                "cyclonedx/cyclonedx-library": "^3.3",
                 "package-url/packageurl-php": "^1.0",
                 "php": "^8.1"
             },
             "require-dev": {
                 "composer/composer": "^2.3.0",
-                "roave/security-advisories": "dev-latest",
-                "symfony/console": "<7"
+                "roave/security-advisories": "dev-latest"
             },
             "type": "composer-plugin",
             "extra": {
@@ -5927,7 +5927,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2024-02-05T11:56:38+00:00"
+            "time": "2024-04-30T10:47:47+00:00"
         },
         {
             "name": "fakerphp/faker",
